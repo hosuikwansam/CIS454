@@ -27,12 +27,12 @@ DROP TABLE IF EXISTS `kid`;
 
 CREATE TABLE `kid` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `first_name` text,
-  `last_name` text,
-  `address` text,
-  `age` int(11) DEFAULT NULL,
+  `name` text NOT NULL,
+  `dob` int(8) DEFAULT NULL,
+  `gender` char(10)  DEFAULT NULL,
   `weight` int(11) DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
+  `mmr` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -45,11 +45,10 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `email` char(255) DEFAULT NULL,
-  `password_hash` char(32) DEFAULT NULL,
-  `type` text,
-  PRIMARY KEY (`id`),
-  KEY `EMAIL` (`email`)
+  `username` char(32) NOT NULL,
+  `password_hash` char(32) NOT NULL,
+  `type` char(10),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
