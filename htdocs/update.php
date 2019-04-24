@@ -1,3 +1,28 @@
+<?php
+
+  if (isset($_POST) & !empty($_POST)) {
+    $rules = $_POST['rules'];
+
+    echo '<script src="js/jquery-3.4.0.min.js"></script>';
+
+    if ($rulesFile = fopen("rules.txt", "w")) {
+      fwrite($rulesFile, $rules);
+      fclose($rulesFile);
+
+      echo '<script type="text/javascript">
+        $(document).ready(function(){
+          $("#rulesSuccess").modal();
+        });</script>';
+    } else {
+      echo '<script type="text/javascript">
+        $(document).ready(function(){
+          $("#rulesFail").modal();
+        });</script>';
+    }
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,10 +50,10 @@
       <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="search_me.html">Search</a>
+            <a class="nav-link" href="search_me.php">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="update.html">Update</a>
+            <a class="nav-link" href="update.php">Update</a>
           </li>
         </ul>
       </div>
@@ -41,22 +66,42 @@
     </div>
 
     <div class="container">
-      <form>
+      <form method="POST">
         <div class="form-group">
           <label for="medicalRule">Input the medical rule below</label>
-          <textarea class="form-control" id="medicalRule" rows="10"></textarea>
+          <textarea class="form-control" id="medicalRule" rows="10" name="rules"></textarea>
         </div>
-        <input class="btn btn-success" type="submit" value="Submit" id="submitRule">
+        <input class="btn btn-success" type="submit" value="Submit">
         <input class="btn btn-secondary" type="reset" value="Reset">
       </form>
     </div>
 
-    <!-- Modal show if update is successful -->
-    <div class="modal fade" id="ruleChange" tabindex="-1" role="dialog" aria-labelledby="updateSuccess" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- Modal show if fail to open file -->
+    <div class="modal fade" id="rulesFail" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="updateSuccess">Success</h5>
+            <h5 class="modal-title">File Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Cannot open rules.txt file for update.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal show if update is successful -->
+    <div class="modal fade" id="rulesSuccess" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Success</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

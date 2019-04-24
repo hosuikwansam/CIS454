@@ -21,10 +21,10 @@
       }
     } else {
       echo '<script src="js/jquery-3.4.0.min.js"></script>';
-      echo "<script type='text/javascript'>
+      echo '<script type="text/javascript">
         $(document).ready(function(){
-          $('#loginFail').modal();
-        });</script>";
+          $("#loginFail").modal();
+        });</script>';
     }
   }
 
@@ -77,7 +77,7 @@
   		<div class="modal-dialog modal-dialog-centered">
     		<div class="modal-content">
       		<div class="modal-header">
-        		<h5 class="modal-title" id="failTitle">Login Error</h5>
+        		<h5 class="modal-title">Login Error</h5>
         		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           		<span aria-hidden="true">&times;</span>
         		</button>
