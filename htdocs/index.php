@@ -22,7 +22,13 @@
        	<h1>Electronic Health Record for Kids</h1>
   			<h5 class="font-weight-light">Agreement</h5>
   			<hr>
-  			<object width="100%" type="text/plain" data="rules.txt" border="0" style="overflow: hidden;"></object>
+  			<?php
+    			$rulesFile = fopen('rules.txt', 'r') or die('Unable to open file!');
+    			while ($line = fgets($rulesFile)) {
+    				echo '<p>' . $line . ' </p>';
+					}
+    			fclose($rulesFile);
+    		?>
   			<p><small>By clicking Get Started, you agree to the above policy.</small></p>
     		<a class="btn btn-primary" href="login.php" role="button">Get Started</a>
 			</div>

@@ -7,8 +7,7 @@ Group 18 Electronic Health Record
 as xampp-control.exe
 5.Click the start buttons for Apache and MySQL.
 6.Navigate to localhost on any browser.
-7.Choose cis454 from the directory.
-8.Enjoy!
+7.Enjoy!
 
 LOGINS:
 Usernames:		Passwords:		Type:
