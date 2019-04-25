@@ -53,6 +53,9 @@
             <a class="nav-link" href="search_me.php">Search</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Forbidden" data-content="Only record manager can access this" href="#">Insert</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="update.php">Update</a>
           </li>
         </ul>

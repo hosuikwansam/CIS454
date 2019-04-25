@@ -75,6 +75,9 @@
           <li class="nav-item" id="insertNav">
             <a class="nav-link" href="insert.php">Insert</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Forbidden" data-content="Only medical expert can access this" href="#">Update</a>
+          </li>
         </ul>
       </div>
     </nav>

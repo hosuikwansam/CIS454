@@ -69,11 +69,14 @@
       </button>
       <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
-          <li class="nav-item" id="userNav">
-            <!-- dynamically add through javascript -->
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="search_guest.php">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Login required" data-content="You have to login to access this" href="#">Insert</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Login required" data-content="You have to login to access this" href="#">Update</a>
           </li>
         </ul>
       </div>
