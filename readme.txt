@@ -14,3 +14,9 @@ Usernames:		Passwords:		Type:
 admin			admin			Medical Expert
 test			test			Record Manager
 dummy			dummy			Medical Expert
+
+KIDS RECORD:
+ID:						Name:
+1 						Kid One
+123						Kid One Two Three
+454						Kid Test
