@@ -33,6 +33,18 @@
         $(document).ready(function(){
           document.getElementById("searchResult").style.display = "block";
         });</script>';
+
+      if ($bmi < 5) {
+        echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#underweight").modal();
+          });</script>';
+      } else if ($bmi > 10) {
+        echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#overweight").modal();
+          });</script>';
+      }
     } else {
       echo '<script type="text/javascript">
         $(document).ready(function(){
@@ -157,6 +169,46 @@
           </div>
           <div class="modal-body">
             <p>Kid not found.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal show if kid's bmi < 5 -->
+    <div class="modal fade" id="underweight" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Underweight</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>The kid is underweight!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal show if kid's bmi > 10 -->
+    <div class="modal fade" id="overweight" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Overweight</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>The kid is overweight!</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
